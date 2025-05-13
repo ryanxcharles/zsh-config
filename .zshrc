@@ -111,8 +111,8 @@ export DENO_INSTALL="/Users/ryan/.deno"
 export PNPM_HOME="/Users/ryan/Library/pnpm"
 export CARGO_HOME="/Users/ryan/.cargo"
 
-# Load NVM
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+# # Load NVM
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
 # Modify PATH
 path=(
