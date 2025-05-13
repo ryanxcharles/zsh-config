@@ -104,18 +104,25 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 
-# export EDITOR="nvim"
+# Set environment variables
+export EDITOR="nvim"
+export NVM_DIR="/Users/ryan/.nvm"
+export DENO_INSTALL="/Users/ryan/.deno"
+export PNPM_HOME="/Users/ryan/Library/pnpm"
+export CARGO_HOME="/Users/ryan/.cargo"
+
+# Load NVM
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
+# Modify PATH
 path=(
+  /opt/homebrew/opt/node@22/bin
+  /Users/ryan/Library/pnpm
+  /Users/ryan/.cargo/bin
   /Users/ryan/bin
   /Users/ryan/dev/lua-language-server/bin
   /opt/homebrew/bin
   /opt/homebrew/opt/mysql-client/bin
+  /Users/ryan/.deno/bin
   $path
 )
-export DENO_INSTALL="/Users/ryan/.deno"
-path=(/Users/ryan/.deno/bin $path)
-export PNPM_HOME="/Users/ryan/Library/pnpm"
-path=(/Users/ryan/Library/pnpm $path)
-path=(/opt/homebrew/opt/node@22/bin $path)
-export CARGO_HOME="/Users/ryan/.cargo"
-path=(/Users/ryan/.cargo/bin $path)
