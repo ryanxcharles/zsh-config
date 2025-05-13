@@ -105,7 +105,6 @@ fi
 #
 
 # Set environment variables
-export EDITOR="nvim"
 export NVM_DIR="/Users/ryan/.nvm"
 export DENO_INSTALL="/Users/ryan/.deno"
 export PNPM_HOME="/Users/ryan/Library/pnpm"
