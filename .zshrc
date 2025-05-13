@@ -126,3 +126,14 @@ path=(
   /Users/ryan/.deno/bin
   $path
 )
+
+unsetopt PUSHD_MINUS  # Ensure +N and -N behave as expected
+function n() { pushd +1 > /dev/null; }  # Rotate stack forward (next)
+function p() {
+    local stack_size=$(dirs -p | wc -l | tr -d ' ')
+    local last_index=$((stack_size - 1))
+    pushd +$last_index > /dev/null
+}  # Jump to last directory
+alias shells='dirs -v' # List directories (like Nushell's shells)
+alias enter='pushd' # Push the current directory onto the stack (like Nushell's enter)
+alias dexit='popd' # Pop the top directory off the stack (like Nushell's dexit)
