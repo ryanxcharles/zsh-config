@@ -104,5 +104,18 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 
-export EDITOR="nvim"
-
+# export EDITOR="nvim"
+path=(
+  /Users/ryan/bin
+  /Users/ryan/dev/lua-language-server/bin
+  /opt/homebrew/bin
+  /opt/homebrew/opt/mysql-client/bin
+  $path
+)
+export DENO_INSTALL="/Users/ryan/.deno"
+path=(/Users/ryan/.deno/bin $path)
+export PNPM_HOME="/Users/ryan/Library/pnpm"
+path=(/Users/ryan/Library/pnpm $path)
+path=(/opt/homebrew/opt/node@22/bin $path)
+export CARGO_HOME="/Users/ryan/.cargo"
+path=(/Users/ryan/.cargo/bin $path)
