@@ -104,27 +104,38 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 
-# Set environment variables
-export NVM_DIR="/Users/ryan/.nvm"
-export DENO_INSTALL="/Users/ryan/.deno"
-export PNPM_HOME="/Users/ryan/Library/pnpm"
-export CARGO_HOME="/Users/ryan/.cargo"
+if [[ "$(uname)" == "Darwin" ]]; then
+  # Set environment variables
+  export DENO_INSTALL="/Users/ryan/.deno"
+  export PNPM_HOME="/Users/ryan/Library/pnpm"
+  export CARGO_HOME="/Users/ryan/.cargo"
 
-# # Load NVM
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+  # Modify PATH
+  path=(
+    /opt/homebrew/opt/node@22/bin
+    /Users/ryan/Library/pnpm
+    /Users/ryan/.cargo/bin
+    /Users/ryan/bin
+    /Users/ryan/dev/lua-language-server/bin
+    /opt/homebrew/bin
+    /opt/homebrew/opt/mysql-client/bin
+    /Users/ryan/.deno/bin
+    $path
+  )
 
-# Modify PATH
-path=(
-  /opt/homebrew/opt/node@22/bin
-  /Users/ryan/Library/pnpm
-  /Users/ryan/.cargo/bin
-  /Users/ryan/bin
-  /Users/ryan/dev/lua-language-server/bin
-  /opt/homebrew/bin
-  /opt/homebrew/opt/mysql-client/bin
-  /Users/ryan/.deno/bin
-  $path
-)
+else
+  # Set environment variables
+  export DENO_INSTALL="$HOME/.deno"
+  export PNPM_HOME="$HOME/local/share/pnpm"
+  export CARGO_HOME="$HOME/.cargo"
+
+  # Modify PATH
+  path=(
+    /home/ryan/.cargo/bin
+    /home/ryan/.deno/bin
+    $path
+  )
+fi
 
 unsetopt PUSHD_MINUS  # Ensure +N and -N behave as expected
 function n() { pushd +1 > /dev/null; }  # Rotate stack forward (next)
