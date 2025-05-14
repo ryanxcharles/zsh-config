@@ -105,12 +105,11 @@ fi
 #
 
 if [[ "$(uname)" == "Darwin" ]]; then
-  # Set environment variables
+  # macOS
   export DENO_INSTALL="/Users/ryan/.deno"
   export PNPM_HOME="/Users/ryan/Library/pnpm"
   export CARGO_HOME="/Users/ryan/.cargo"
 
-  # Modify PATH
   path=(
     /opt/homebrew/opt/node@22/bin
     /Users/ryan/Library/pnpm
@@ -124,15 +123,9 @@ if [[ "$(uname)" == "Darwin" ]]; then
   )
 
 else
-  # Set environment variables
-  export DENO_INSTALL="$HOME/.deno"
-  export PNPM_HOME="$HOME/local/share/pnpm"
-  export CARGO_HOME="$HOME/.cargo"
+  # linux
 
-  # Modify PATH
   path=(
-    /home/ryan/.cargo/bin
-    /home/ryan/.deno/bin
     $path
   )
 fi
