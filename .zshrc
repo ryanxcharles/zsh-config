@@ -106,11 +106,13 @@ fi
 
 if [[ "$(uname)" == "Darwin" ]]; then
   # macOS
-  export DENO_INSTALL="/Users/ryan/.deno"
-  export PNPM_HOME="/Users/ryan/Library/pnpm"
-  export CARGO_HOME="/Users/ryan/.cargo"
+  export DENO_INSTALL="$HOME/.deno"
+  export PNPM_HOME="$HOME/Library/pnpm"
+  export CARGO_HOME="$HOME/.cargo"
+  export BUN_INSTALL="$HOME/.bun"
 
   path=(
+    $BUN_INSTALL/bin
     /opt/homebrew/opt/node@22/bin
     /Users/ryan/Library/pnpm
     /Users/ryan/.cargo/bin
@@ -140,3 +142,6 @@ function p() {
 alias shells='dirs -v' # List directories (like Nushell's shells)
 alias enter='pushd' # Push the current directory onto the stack (like Nushell's enter)
 alias dexit='popd' # Pop the top directory off the stack (like Nushell's dexit)
+
+# bun completions
+[ -s "/Users/ryan/.bun/_bun" ] && source "/Users/ryan/.bun/_bun"
