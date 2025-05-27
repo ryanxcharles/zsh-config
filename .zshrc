@@ -132,6 +132,7 @@ else
   )
 fi
 
+unsetopt AUTO_PUSHD  # Disable auto pushd on directory change
 unsetopt PUSHD_MINUS  # Ensure +N and -N behave as expected
 function n() { pushd +1 > /dev/null; }  # Rotate stack forward (next)
 function p() {
