@@ -148,6 +148,6 @@ alias dexit='popd' # Pop the top directory off the stack (like Nushell's dexit)
 [ -s "/Users/ryan/.bun/_bun" ] && source "/Users/ryan/.bun/_bun"
 
 # if .env exists, source it
-if [[ -f ".env" ]]; then
+if [[ -f "$HOME/.config/zsh/.env" ]]; then
   source .env
 fi
