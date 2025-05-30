@@ -146,3 +146,8 @@ alias dexit='popd' # Pop the top directory off the stack (like Nushell's dexit)
 
 # bun completions
 [ -s "/Users/ryan/.bun/_bun" ] && source "/Users/ryan/.bun/_bun"
+
+# if .env exists, source it
+if [[ -f ".env" ]]; then
+  source .env
+fi
