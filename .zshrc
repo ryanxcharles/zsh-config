@@ -149,5 +149,5 @@ alias dexit='popd' # Pop the top directory off the stack (like Nushell's dexit)
 
 # if .env exists, source it
 if [[ -f "$HOME/.config/zsh/.env" ]]; then
-  source .env
+  source "$HOME/.config/zsh/.env"
 fi
