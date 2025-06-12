@@ -73,6 +73,8 @@ ZSH_THEME="robbyrussell"
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting macos zsh-completions)
 
 source $ZSH/oh-my-zsh.sh
+# Load zsh-completions
+autoload -Uz compinit && compinit
 
 # User configuration
 
@@ -151,3 +153,4 @@ alias dexit='popd' # Pop the top directory off the stack (like Nushell's dexit)
 if [[ -f "$HOME/.config/zsh/.env" ]]; then
   source "$HOME/.config/zsh/.env"
 fi
+
