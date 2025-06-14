@@ -161,3 +161,7 @@ gacm() {
   git diff --cached --name-status | cat
   git commit -m "$*"
 }
+
+gpom() {
+  git push origin master
+}
