@@ -154,3 +154,9 @@ if [[ -f "$HOME/.config/zsh/.env" ]]; then
   source "$HOME/.config/zsh/.env"
 fi
 
+# git commit all with message
+gacm() {
+  git add .
+  git commit -m "$*"
+}
+
