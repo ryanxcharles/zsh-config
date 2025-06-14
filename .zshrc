@@ -157,6 +157,7 @@ fi
 # git commit all with message
 gacm() {
   git add .
+  echo "Staged for commit:"
+  git diff --cached --name-status | cat
   git commit -m "$*"
 }
-
