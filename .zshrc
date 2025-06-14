@@ -184,7 +184,7 @@ gpom() {
   git push origin main
 }
 
-gacmp() {
+gall() {
   git add .
   echo "Staged for commit:"
   git diff --cached --name-status | cat
