@@ -191,3 +191,5 @@ gall() {
   git commit -m "$*"
   git push origin main
 }
+
+alias py="python"
