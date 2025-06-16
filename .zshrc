@@ -193,3 +193,8 @@ gall() {
 }
 
 alias py="python"
+
+# Enable vi mode in zsh
+bindkey -v
+# Enable emacs mode in zsh
+# bindkey -e
