@@ -107,34 +107,25 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 
-if [[ "$(uname)" == "Darwin" ]]; then
-  # macOS
-  export DENO_INSTALL="$HOME/.deno"
-  export PNPM_HOME="$HOME/Library/pnpm"
-  export CARGO_HOME="$HOME/.cargo"
-  export BUN_INSTALL="$HOME/.bun"
+export DENO_INSTALL="$HOME/.deno"
+export PNPM_HOME="$HOME/Library/pnpm"
+export CARGO_HOME="$HOME/.cargo"
+export BUN_INSTALL="$HOME/.bun"
 
-  path=(
-    $BUN_INSTALL/bin
-    /opt/homebrew/opt/node@22/bin
-    /Users/ryan/Library/pnpm
-    /Users/ryan/.cargo/bin
-    /Users/ryan/bin
-    /Users/ryan/dev/lua-language-server/bin
-    /opt/homebrew/bin
-    /opt/homebrew/opt/mysql-client/bin
-    /Users/ryan/.deno/bin
-    $path
-  )
+path=(
+  $BUN_INSTALL/bin
+  /opt/homebrew/opt/node@22/bin
+  /Users/ryan/Library/pnpm
+  /Users/ryan/.cargo/bin
+  /Users/ryan/bin
+  /Users/ryan/dev/lua-language-server/bin
+  /opt/homebrew/bin
+  /opt/homebrew/opt/mysql-client/bin
+  /Users/ryan/.deno/bin
+  $path
+)
 
-else
-  # linux
-
-  path=(
-    $path
-  )
-fi
-
+# simulate nushell's shells, enter, dexit, n, p commands
 unsetopt AUTO_PUSHD  # Disable auto pushd on directory change
 unsetopt PUSHD_MINUS  # Ensure +N and -N behave as expected
 function n() { pushd +1 > /dev/null; }  # Rotate stack forward (next)
