@@ -146,44 +146,6 @@ if [[ -f "$HOME/.config/zsh/.env" ]]; then
   source "$HOME/.config/zsh/.env"
 fi
 
-# oh-my-zsh git shortcuts
-# | Alias     | Command Equivalent                         | Description                                       |
-# |-----------|-------------------------------------------|---------------------------------------------------|
-# | `gst`     | `git status`                              | Show status                                       |
-# | `gl`      | `git pull`                                | Pull from upstream                                |
-# | `gp`      | `git push`                                | Push to remote                                    |
-# | `gcm`     | `git checkout master`                     | Checkout `master` branch                          |
-# | `gco`     | `git checkout`                            | Checkout any branch                               |
-# | `gaa`     | `git add --all`                           | Stage all changes                                 |
-# | `gc`      | `git commit -v`                           | Commit with verbose message editor                |
-# | `gca`     | `git commit -v -a`                        | Add and commit all tracked files                  |
-# | `gcam`    | `git commit -a -m "msg"`                  | Add and commit with inline message                |
-# | `gcm`     | `git commit -m "msg"`                     | Commit with inline message                        |
-# | `gr`      | `git remote`                              | List remotes                                      |
-# | `gcl`     | `git clone`                               | Clone a repository                                |
-# | `glog`    | `git log --oneline --decorate --color`    | Nicely formatted git log                          |
-
-# git commit all with message
-gacm() {
-  git add .
-  echo "Staged for commit:"
-  git diff --cached --name-status | cat
-  git commit -m "$*"
-}
-
-# git push origin main
-gpom() {
-  git push origin main
-}
-
-gall() {
-  git add .
-  echo "Staged for commit:"
-  git diff --cached --name-status | cat
-  git commit -m "$*"
-  git push origin main
-}
-
 alias py="python"
 
 # Enable vi mode in zsh
