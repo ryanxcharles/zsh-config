@@ -114,7 +114,7 @@ export BUN_INSTALL="$HOME/.bun"
 
 path=(
   $BUN_INSTALL/bin
-  /opt/homebrew/opt/node@22/bin
+  /opt/homebrew/opt/node@24/bin
   /Users/ryan/Library/pnpm
   /Users/ryan/.cargo/bin
   /Users/ryan/bin
