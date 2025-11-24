@@ -417,4 +417,110 @@ Let me know if you want tips for using it, or for a mode-indicator prompt!
 
 # === USER ===
 
-if i want to get out of vim mode, how do i do that?
+in zsh, with "oh my zsh", how do i disable the git plugin?
+
+# === ASSISTANT ===
+
+To disable the `git` plugin in **Oh My Zsh**, you need to modify the `plugins` list in your `~/.zshrc` configuration file. Here's how to do it step by step:
+
+---
+
+### 1. Open your `~/.zshrc` file
+
+Use a text editor like `nano`, `vim`, or any other editor you prefer:
+
+```zsh
+nano ~/.zshrc
+```
+
+or
+
+```zsh
+vim ~/.zshrc
+```
+
+---
+
+### 2. Find the `plugins` line
+
+Look for a line that looks something like this:
+
+```zsh
+plugins=(git ...other plugins...)
+```
+
+This line lists all the active Oh My Zsh plugins. The `git` plugin will be in this list if it's enabled.
+
+---
+
+### 3. Remove `git` from the list
+
+Simply remove `git` from the parentheses. For example, if your line is:
+
+```zsh
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+```
+
+Change it to:
+
+```zsh
+plugins=(zsh-autosuggestions zsh-syntax-highlighting)
+```
+
+If `git` is the only plugin, you can leave the list empty:
+
+```zsh
+plugins=()
+```
+
+---
+
+### 4. Save the file
+
+- If using `nano`, press `Ctrl+O`, then `Enter` to save, and `Ctrl+X` to exit.
+- If using `vim`, press `Esc`, then type `:wq` and press `Enter` to save and exit.
+
+---
+
+### 5. Reload your Zsh configuration
+
+Apply the changes by reloading your shell configuration:
+
+```zsh
+source ~/.zshrc
+```
+
+Alternatively, you can close and reopen your terminal.
+
+---
+
+### 6. Verify the plugin is disabled
+
+You can check if the `git` plugin aliases (like `gst` for `git status`) no longer work. For example, try:
+
+```zsh
+gst
+```
+
+If the `git` plugin is disabled, this should result in a "command not found" error.
+
+You can also list active plugins with:
+
+```zsh
+echo $plugins
+```
+
+This will show the current list of enabled plugins, and `git` should no longer be there.
+
+---
+
+### Notes
+
+- **Custom Git Aliases**: Disabling the `git` plugin will remove all the built-in Oh My Zsh git aliases (like `gst`, `gco`, etc.). If you still want some custom git shortcuts (like your `gacm`), they will remain if you've defined them manually in your `~/.zshrc`.
+- **Re-enable Later**: If you change your mind, just add `git` back to the `plugins` list in `~/.zshrc` and reload the configuration.
+
+Let me know if you run into any issues or need help with custom git aliases after disabling the plugin!
+
+# === USER ===
+
+

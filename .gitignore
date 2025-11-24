@@ -1,3 +1,4 @@
 .zsh_history
 .zcompdump*
 .env
+.zsh_sessions
