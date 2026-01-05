@@ -142,7 +142,7 @@ alias enter='pushd' # Push the current directory onto the stack (like Nushell's 
 alias dexit='popd' # Pop the top directory off the stack (like Nushell's dexit)
 
 # bun completions
-[ -s "/Users/ryan/.bun/_bun" ] && source "/Users/ryan/.bun/_bun"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 # if .env exists, source it
 if [[ -f "$HOME/.config/zsh/.env" ]]; then
