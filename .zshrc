@@ -115,13 +115,16 @@ export BUN_INSTALL="$HOME/.bun"
 path=(
   $BUN_INSTALL/bin
   /opt/homebrew/opt/node@24/bin
-  /Users/ryan/Library/pnpm
-  /Users/ryan/.cargo/bin
-  /Users/ryan/bin
-  /Users/ryan/dev/lua-language-server/bin
+  $HOME/Library/pnpm
+  $HOME/.cargo/bin
+  $HOME/bin
+  $HOME/dev/lua-language-server/bin
   /opt/homebrew/bin
   /opt/homebrew/opt/mysql-client/bin
-  /Users/ryan/.deno/bin
+  $HOME/.deno/bin
+  /Applications/Docker.app/Contents/Resources/bin
+  /opt/homebrew/opt/sqlite/bin
+  $HOME/dev/termsurf/zig-out/bin
   $path
 )
 
